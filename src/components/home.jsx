@@ -7,8 +7,6 @@ const Home = () => {
     return (
         <div className="homepage">
             <Directory />
-
-
         </div>
     )
 };
