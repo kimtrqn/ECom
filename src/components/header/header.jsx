@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as Logo } from '../assets/images/crown.svg';
+import { ReactComponent as Logo } from '../../assets/images/crown.svg';
 
 
-import '../stylesheets/header-style.scss';
+import './header-style.scss';
 
 const Header = () => (
 

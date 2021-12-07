@@ -1,9 +1,9 @@
 import React from 'react';
 
-import CollectionItem from './Collection-items';
-import '../stylesheets/preview-style.scss';
+import CollectionItem from '../collection-item/Collection-items';
+import './collection-preview-style.scss';
 
-const Preview = ({ title, items }) => {
+const CollectionPreview = ({ title, items }) => {
 
 
     return (
@@ -22,4 +22,4 @@ const Preview = ({ title, items }) => {
     )
 };
 
-export default Preview;
+export default CollectionPreview;

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Header from './components/header';
-import Home from './components/Home';
-import Shop from './components/shop/Shop'
+import Header from './components/header/header';
+import Home from './pages/homepage/Home';
+import Shop from './pages/shop/Shop';
 
 import './App.css';
 
