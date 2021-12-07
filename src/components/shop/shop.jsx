@@ -1,11 +1,11 @@
 import React from 'react';
 
 import SHOP_DATA from './shop-data';
-import Preview from '../preview';
+import Preview from '../Collection-Preview';
 
 import '../../stylesheets/shop-style.scss';
 
-class ShopPage extends React.Component {
+class Shop extends React.Component {
 
     constructor() {
         super();
@@ -32,4 +32,4 @@ class ShopPage extends React.Component {
 
 };
 
-export default ShopPage;
+export default Shop;

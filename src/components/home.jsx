@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Directory from './directory';
+import Directory from './Directory';
 import '../stylesheets/home-style.scss';
 
 const Home = () => {
