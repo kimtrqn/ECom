@@ -51,7 +51,7 @@ class SignIn extends React.Component {
                         value={this.state.password} required />
 
                     <Button type='submit'>Sign in </Button>
-                    <Button onClick={signInWithGoogle}>
+                    <Button onClick={signInWithGoogle} isGoogleSignIn>
                         {' '}
                         Sign in with Google{' '}
                     </Button>

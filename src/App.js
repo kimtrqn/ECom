@@ -28,7 +28,7 @@ class App extends React.Component {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
       this.setState({ currentUser: user})
 
-      console.log(user._delegate);
+      console.log(user);
     });
   }
 
@@ -41,7 +41,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      <Header />
+      <Header currentUser={this.state.currentUser}/>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/shop' component={Shop} />
