@@ -1,12 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import Header from './components/header/header';
 import Home from './pages/homepage/Home';
 import Shop from './pages/shop/Shop';
 import Session from './pages/session/Session';
+
 
 import './App.css';
 
@@ -25,10 +26,11 @@ class App extends React.Component {
 
   // set unsubscribeFromAuth to a new method to set the user 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user})
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      createUserProfileDocument(user);
 
-      console.log(user);
+
+      // console.log(user);
     });
   }
 

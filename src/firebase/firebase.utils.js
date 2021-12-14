@@ -12,6 +12,15 @@ const config = {
   measurementId: "${config.measurementId}"
 };
 
+export const createUserProfileDocument = async(userAuth, additionalData) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`users/${userAuth.uid}`); //check if the userAuth is in the documents;
+
+  const snapShot = await userRef.get(); //await because userAuth is async .get is to find the doc
+  console.log(snapShot);
+}
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
