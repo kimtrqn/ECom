@@ -11,7 +11,7 @@ import CartDropDown from '../cart-drop/cart-drop';
 
 import './header-style.scss';
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
 
     <div className='header'>
         <Link to='/'>
@@ -28,13 +28,17 @@ const Header = ({ currentUser }) => (
             }
             <CartIcon />
         </div>
-        <CartDropDown />
+        {
+            hidden ? null : <CartDropDown />
+        }
+        
     </div>
 );
 
-
-const mstp = state => ({
-    currentUser: state.user.currentUser,
+//deconstruct a deep object
+const mstp = ({ user: { currentUser }, cart: { hidden }}) => ({
+    currentUser,
+    hidden
 });
 
 
