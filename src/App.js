@@ -1,9 +1,11 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user_action';
+import { selectCurrentUser } from './redux/user/user.selectors';
 
 import Header from './components/header/header';
 import Home from './pages/homepage/Home';
@@ -65,8 +67,8 @@ class App extends React.Component {
 }
 
 
-const mstp = ({ user }) => ({
-  currentUser: user.currentUser,
+const mstp =  createStructuredSelector({
+  currentUser: selectCurrentUser
 });
 
 

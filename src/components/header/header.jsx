@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import { auth } from '../../firebase/firebase.utils';
 
-import { ReactComponent as Logo } from '../../assets/images/crown.svg';
-
 import CartIcon from '../cart-icon/cart-icon';
 import CartDropDown from '../cart-drop/cart-drop';
+import { selectCartHidden,  } from '../../redux/cart/cart.selectors';
+import { selectCurrentUser } from '../../redux/user/user.selectors';
 
+import { ReactComponent as Logo } from '../../assets/images/crown.svg';
 import './header-style.scss';
 
 const Header = ({ currentUser, hidden }) => (
@@ -36,9 +38,10 @@ const Header = ({ currentUser, hidden }) => (
 );
 
 //deconstruct a deep object
-const mstp = ({ user: { currentUser }, cart: { hidden }}) => ({
-    currentUser,
-    hidden
+//createstructore you do not to pass in state
+const mstp = createStructuredSelector({
+    currentUser: selectCurrentUser,
+    hidden: selectCartHidden
 });
 
 
