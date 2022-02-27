@@ -11,6 +11,7 @@ import Header from './components/header/header';
 import Home from './pages/homepage/Home';
 import Shop from './pages/shop/Shop';
 import Session from './pages/session/Session';
+import CheckoutPage from './pages/checkout/checkout';
 
 
 import './App.css';
@@ -57,6 +58,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/shop' component={Shop} />
+          <Route exact path='/checkout' component={CheckoutPage} />
           <Route 
             exact path='/signin' 
             render={() => this.props.currentUser ? <Redirect to='/' /> : <Session />} />
