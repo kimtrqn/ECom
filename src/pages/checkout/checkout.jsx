@@ -39,4 +39,6 @@ const mstp = createStructuredSelector({
     total: selectCartTotal
 })
 
+//clean out mstp
+
 export default connect(mstp)(CheckoutPage)
