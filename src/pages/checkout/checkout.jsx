@@ -30,6 +30,10 @@ const CheckoutPage = ({ cartItems, total}) => {
                 cartItems.map(cartItem => 
                     cartItem.name)
             }
+
+            <div className="total">
+                <span>Total: ${total}</span>
+            </div>
         </div>
     )
 };
@@ -39,6 +43,5 @@ const mstp = createStructuredSelector({
     total: selectCartTotal
 })
 
-//clean out mstp
 
 export default connect(mstp)(CheckoutPage)
