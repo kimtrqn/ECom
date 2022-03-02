@@ -7,7 +7,7 @@ import './checkout-styles.scss';
 
 import CheckoutItem from '../../components/checkout-item/checkout-item';
 
-const CheckoutPage = ({ cartItems, total, removeItem}) => {
+const CheckoutPage = ({ cartItems, total, clearItemFromCart}) => {
 
     return (
         <div className="checkout-page">
@@ -30,7 +30,7 @@ const CheckoutPage = ({ cartItems, total, removeItem}) => {
             </div>
             {
                 cartItems.map(cartItem => 
-                    <CheckoutItem key={cartItem.id} cartItem={cartItem} removeItem={removeItem}/>
+                    <CheckoutItem key={cartItem.id} cartItem={cartItem} clearItemFromCart={clearItemFromCart}/>
                     )
             }
 
